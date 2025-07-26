@@ -70,7 +70,7 @@ console.log(result);
 
 
 ## 📁 Project Structure
-
+<pre>
 Promotions-engine-/
 ├── Promotions-engine-Scopely/ # Main engine source code
 │ ├── index.js # Main entry point
@@ -81,7 +81,7 @@ Promotions-engine-/
 ├── examples/ # Usage examples
 ├── package.json # Project metadata & dependencies
 └── README.md # Project documentation
-
+</pre>
 
 
 ## 🎯 Supported Promotion Types
