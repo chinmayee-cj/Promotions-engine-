@@ -1,0 +1,73 @@
+rules:
+  - id: "high_spender_vip"
+    description: "VIP promotion for high spending players"
+    priority: 100
+    active: true
+    conditions:
+      player_level: { min: 50 }
+      spend_tier: ["GOLD", "PLATINUM"]
+      total_spend_30d: { min: 1000 }
+    promotion:
+      id: "vip_mega_bonus"
+      name: "VIP Mega Bonus"
+      payload:
+        chips: 1000000
+        bonus_spins: 100
+        multiplier: 3
+
+  - id: "comeback_special"
+    description: "Special offer for inactive players"
+    priority: 80
+    active: true
+    conditions:
+      days_since_last_purchase: { min: 14 }
+      player_level: { min: 20 }
+      country: ["US", "CA", "UK"]
+    promotion:
+      id: "comeback_offer"
+      name: "Welcome Back Bonus"
+      payload:
+        chips: 500000
+        bonus_spins: 50
+        free_tournament_entries: 3
+
+  - id: "new_player_boost"
+    description: "Boost for new players"
+    priority: 60
+    active: true
+    conditions:
+      player_level: { max: 10 }
+      days_since_registration: { max: 7 }
+    promotion:
+      id: "newbie_boost"
+      name: "New Player Boost"
+      payload:
+        chips: 100000
+        bonus_spins: 20
+        tutorial_skip: true
+
+  - id: "country_specific_us"
+    description: "US-specific promotion"
+    priority: 40
+    active: true
+    conditions:
+      country: ["US"]
+      spend_tier: ["SILVER", "GOLD", "PLATINUM"]
+    promotion:
+      id: "usa_special"
+      name: "Stars & Stripes Bonus"
+      payload:
+        chips: 250000
+        bonus_spins: 25
+
+  - id: "default_promotion"
+    description: "Default promotion for all players"
+    priority: 1
+    active: true
+    conditions: {}
+    promotion:
+      id: "daily_bonus"
+      name: "Daily Login Bonus"
+      payload:
+        chips: 50000
+        bonus_spins: 5
