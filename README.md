@@ -22,8 +22,6 @@ git clone https://github.com/chinmayee-cj/Promotions-engine-.git
 cd Promotions-engine-
 npm install
 
-text
-
 ## 🔧 Usage Example
 
 const PromotionsEngine = require('./Promotions-engine-Scopely');
